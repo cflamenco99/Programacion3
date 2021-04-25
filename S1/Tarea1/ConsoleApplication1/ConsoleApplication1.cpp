@@ -1,20 +1,50 @@
-// ConsoleApplication1.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+using namespace std;
+#include <iomanip>
 
-int main()
-{
-    std::cout << "Hello World!\n";
+int main() {
+
+    //DECLARACIÓN DE VARIABLES
+    double peso, altura, BMI;
+
+    std::cout << "========================\n";
+    std::cout << "-  CALCULADORA DE BMI  -\n";
+    std::cout << "========================\n";
+    std::cout << "\n";
+
+    //CAPTURA DE DATOS DE VARIABLES: PESO EN KILOGRAMOS Y ALTURA EN METROS.   
+    std::cout << "Ingrese su peso en kilogramos:\n";
+    std::cin >> peso;
+    std::cout << "Ingrese su altura en metros:\n";
+    std::cin >> altura;
+
+    //CÁLCULO DEL BMI
+    BMI = (peso) / (altura * altura);
+
+    // CONDICIONALES Y LÓGICA 
+    if (BMI < 18.5) {
+        std::cout << " Su BMI es: " << fixed << setprecision(2) << BMI;
+
+    }
+    else if (BMI >= 18.5 && BMI <= 24.9) {
+        std::cout << " Su BMI es: " << fixed << setprecision(2) << BMI;
+
+    }
+    else if (BMI >= 25 && BMI <= 29.9) {
+        std::cout << " Su BMI es: " << fixed << setprecision(2) << BMI;
+    }
+    else if (BMI > 30) {
+        std::cout << " Su BMI es: " << fixed << setprecision(2) << BMI;
+    }
+
+    // TABLA del Departamento de Salud y Servicios Humanos/Instituto Nacional de Salud para que el usuario pueda evaluar su BMI.
+    std::cout << "\n";
+    std::cout << "---------------------------------\n";
+    std::cout << "|   Bajo peso: menos de 18.5.   |\n";
+    std::cout << "|   Normal: entre 18.5 y 24.9.  |\n";
+    std::cout << "|   Sobrepeso entre 25 y 29.9.  |\n";
+    std::cout << "|   Obeso: 30 o mas.            |\n";
+    std::cout << "---------------------------------\n";
+
+    return 0;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
