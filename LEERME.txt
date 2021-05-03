@@ -1,0 +1,14 @@
+Bienvenidos al repositorio de tareas de la clase de programacion 3!!!
+
+Alumno: Carlos Flamenco.
+
+En este repositorio encontraremos las carpetas 
+con las diferentes tareas asignadas por semana.
+
+Ejemplo: "S1" se refiere a la carpeta que contiene todas las tareas de la semana 1.
+
+
+NOTA: Los programas creados en c++ de este repositorio fueron creados 
+con visual studio 2019.
+
+Gracias y buen día!
