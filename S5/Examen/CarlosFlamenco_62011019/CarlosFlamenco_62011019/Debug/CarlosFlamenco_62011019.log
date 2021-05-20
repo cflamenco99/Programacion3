@@ -1,0 +1,4 @@
+﻿  CarlosFlamenco_62011019.cpp
+C:\Users\cflamenco\Source\repos\CarlosFlamenco_62011019\CarlosFlamenco_62011019\CarlosFlamenco_62011019.cpp(243,38): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\cflamenco\Source\repos\CarlosFlamenco_62011019\CarlosFlamenco_62011019\CarlosFlamenco_62011019.cpp(249,68): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  CarlosFlamenco_62011019.vcxproj -> C:\Users\cflamenco\Source\repos\CarlosFlamenco_62011019\Debug\CarlosFlamenco_62011019.exe
