@@ -66,7 +66,15 @@ public:
 
 	bool AciertoValido(int jugada, int PrimerNumeroGanador, int SegundoNumeroGanador, int TercerNumeroGanador)
 	{
-		if (jugada == (PrimerNumeroGanador | SegundoNumeroGanador | TercerNumeroGanador))
+		if (jugada == PrimerNumeroGanador)
+		{
+			return true;
+		}
+		if (jugada ==  SegundoNumeroGanador)
+		{
+			return true;
+		}
+		if (jugada == TercerNumeroGanador)
 		{
 			return true;
 		}
@@ -79,51 +87,51 @@ public:
 		switch (Apuesta)
 		{
 		case 5:
-			PremioEfectivo = Aciertos = 1 ? 20 : 0;
-			PremioEfectivo = Aciertos = 2 ? 150 : 0;
-			PremioEfectivo = Aciertos = 3 ? 100000 : 0;
+			PremioEfectivo = Aciertos == 1 ? 20 : 0;
+			PremioEfectivo = Aciertos == 2 ? 150 : 0;
+			PremioEfectivo = Aciertos == 3 ? 100000 : 0;
 			break;
 
 		case 10:
-			PremioEfectivo = Aciertos = 1 ? 40 : 0;
-			PremioEfectivo = Aciertos = 2 ? 300 : 0;
-			PremioEfectivo = Aciertos = 3 ? 200000 : 0;
+			PremioEfectivo = Aciertos == 1 ? 40 : 0;
+			PremioEfectivo = Aciertos == 2 ? 300 : 0;
+			PremioEfectivo = Aciertos == 3 ? 200000 : 0;
 			break;
 
 		case 15:
-			PremioEfectivo = Aciertos = 1 ? 60 : 0;
-			PremioEfectivo = Aciertos = 2 ? 450 : 0;
-			PremioEfectivo = Aciertos = 3 ? 300000 : 0;
+			PremioEfectivo = Aciertos == 1 ? 60 : 0;
+			PremioEfectivo = Aciertos == 2 ? 450 : 0;
+			PremioEfectivo = Aciertos == 3 ? 300000 : 0;
 			break;
 
 		case 20:
-			PremioEfectivo = Aciertos = 1 ? 80 : 0;
-			PremioEfectivo = Aciertos = 2 ? 600 : 0;
-			PremioEfectivo = Aciertos = 3 ? 400000 : 0;
+			PremioEfectivo = Aciertos == 1 ? 80 : 0;
+			PremioEfectivo = Aciertos == 2 ? 600 : 0;
+			PremioEfectivo = Aciertos == 3 ? 400000 : 0;
 			break;
 
 		case 25:
-			PremioEfectivo = Aciertos = 1 ? 100 : 0;
-			PremioEfectivo = Aciertos = 2 ? 750 : 0;
-			PremioEfectivo = Aciertos = 3 ? 500000 : 0;
+			PremioEfectivo = Aciertos == 1 ? 100 : 0;
+			PremioEfectivo = Aciertos == 2 ? 750 : 0;
+			PremioEfectivo = Aciertos == 3 ? 500000 : 0;
 			break;
 
 		case 30:
-			PremioEfectivo = Aciertos = 1 ? 120 : 0;
-			PremioEfectivo = Aciertos = 2 ? 900 : 0;
-			PremioEfectivo = Aciertos = 3 ? 600000 : 0;
+			PremioEfectivo = Aciertos == 1 ? 120 : 0;
+			PremioEfectivo = Aciertos == 2 ? 900 : 0;
+			PremioEfectivo = Aciertos == 3 ? 600000 : 0;
 			break;
 
 		case 40:
-			PremioEfectivo = Aciertos = 1 ? 160 : 0;
-			PremioEfectivo = Aciertos = 2 ? 1200 : 0;
-			PremioEfectivo = Aciertos = 3 ? 800000 : 0;
+			PremioEfectivo = Aciertos == 1 ? 160 : 0;
+			PremioEfectivo = Aciertos == 2 ? 1200 : 0;
+			PremioEfectivo = Aciertos == 3 ? 800000 : 0;
 			break;
 
 		case 50:
-			PremioEfectivo = Aciertos = 1 ? 200 : 0;
-			PremioEfectivo = Aciertos = 2 ? 1500 : 0;
-			PremioEfectivo = Aciertos = 3 ? 1000000 : 0;
+			PremioEfectivo = Aciertos == 1 ? 200 : 0;
+			PremioEfectivo = Aciertos == 2 ? 1500 : 0;
+			PremioEfectivo = Aciertos == 3 ? 1000000 : 0;
 			break;
 		}
 		return PremioEfectivo;
@@ -178,10 +186,10 @@ int main()
 {	
 	FuncionesGenerales Funciones;	
 	Sorteo SorteoGanador;
-	LaJugada Jugada(0, 0, 0, 5);
+	LaJugada Jugada;
 
-	int PrimerJugada, SegundaJugada, TercerJugada, OpcionMenu, PremioEnEfectivo = 0, Aciertos = 0;
-	float Apuesta;
+	int PrimerJugada = 0, SegundaJugada = 0, TercerJugada = 0, OpcionMenu = 0, PremioEnEfectivo = 0, Aciertos = 0;
+	float Apuesta = 0;
 	int Centinela = 1;
 
 	cout << "\n BIENVENIDO AL SORTEO!!! ";
@@ -192,6 +200,7 @@ int main()
 		cout << "\n 2. Vender Boletos";
 		cout << "\n 3. Realizar Sorteo";
 		cout << "\n 4. Resultados";
+		cout << "\n 5. SALIR";
 
 		cout << "\n\n Ingrese la opcion: ";
 		cin >> OpcionMenu;
@@ -253,6 +262,8 @@ int main()
 
 
 		case 3:
+			cout << "\n **************************** REALIZANDO SORTEO ****************************";
+			cout << "\n **************************** SORTEO REALIZADO ****************************";
 			if (Funciones.AciertoValido(Jugada.PrimerJugada, SorteoGanador.PrimerNumeroGanador, SorteoGanador.SegundoNumeroGanador, SorteoGanador.TercerNumeroGanador))
 			{
 				Aciertos++;
