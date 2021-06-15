@@ -1,0 +1,62 @@
+--------Ordenamiento Burbuja--------
+    1. for (i=1; i<TAM; i++)
+    2.      for j=0 ; j<TAM - 1; j++)
+    3.           if (lista[j] > lista[j+1])
+    4.                temp = lista[j];
+    5.                lista[j] = lista[j+1];
+    6.                lista[j+1] = temp;
+
+--------Ordenamiento por Selección--------
+    1. for (i=0; i<TAM - 1; i++)
+    2.      pos_men = Menor(lista, TAM, i);
+    3.      temp = lista[i];
+    4.      lista[i] = lista [pos_men];
+    5.      lista [pos_men] = temp;
+    
+--------Ordenamiento por Inserción--------
+    1. for (i=1; i<TAM; i++)
+    2.      temp = lista[i];
+    3.      j = i - 1;
+    4.      while ( (lista[j] > temp) && (j >= 0) )
+    5.           lista[j+1] = lista[j];
+    6.           j--;
+    7.      lista[j+1] = temp;
+
+--------Ordenamiento Rápido (Quicksort)--------
+ Nombre Procedimiento: OrdRap
+ Parámetros:
+    lista a ordenar (lista)
+    índice inferior (inf)
+    índice superior (sup)
+
+    // Inicialización de variables
+    1. elem_div = lista[sup];
+    2. i = inf - 1;
+    3. j = sup;
+    4. cont = 1;
+
+    // Verificamos que no se crucen los límites
+    5. if (inf >= sup)
+    6.      retornar;
+
+    //  Clasificamos la sublista
+    7. while (cont)
+    8.      while (lista[++i] < elem_div);
+    9.      while (lista[--j] > elem_div);
+   10.      if (i < j)
+   11.           temp = lista[i];
+   12.           lista[i] = lista[j];
+   13.           lista[j] = temp;
+   14.      else
+   15.           cont = 0;
+
+   // Copiamos el elemento de división
+   // en su posición final
+   16. temp = lista[i];
+   17. lista[i] = lista[sup];
+   18. lista[sup] = temp;
+
+   // Aplicamos el procedimiento
+   // recursivamente a cada sublista
+   19. OrdRap (lista, inf, i - 1);
+   20. OrdRap (lista, i + 1, sup);
